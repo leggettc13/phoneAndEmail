@@ -6,8 +6,6 @@
 
 import pyperclip, re
 
-# TODO: Create Phone Number regex.
-
 phoneRegex = re.compile(r'''(
         (\d{3}|\(\d{3}\))?              # area code
         (\s|-|\.)?                      # separator
@@ -17,9 +15,12 @@ phoneRegex = re.compile(r'''(
         (\s*(ext|x|ext\.)\s*(\d{2,5}))?  # extension
         )''', re.VERBOSE)
 
-print(phoneRegex.search("(252) 296-6281 ext. 24").group())
-
-# TODO: Create Email regex.
+emailRegex = re.compile(r'''(
+        [a-zA-Z0-9._%+-]+   # username
+        @                   # @ symbol
+        [a-zA-Z0-9.-]+      # domain name
+        (\.[a-zA-Z]{2,4})   # dot-something (.com, .net, etc)
+        )''', re.VERBOSE)
 
 # TODO: Find matches in clipboard text.
 
